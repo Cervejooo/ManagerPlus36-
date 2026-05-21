@@ -2,7 +2,7 @@ const state = {
   view: "dashboard",
   equipmentSearch: "",
   workOrderSearch: "",
-  equipmentStatus: "Todos",
+  equipmentStatus: "Todas",
   equipmentCriticality: "Todos",
   workOrderStatus: "Todos",
   workOrderPriority: "Todos",
