@@ -1,0 +1,6 @@
+[2026-05-20 13:32:04] Exception: SQLSTATE[HY093]: Invalid parameter number
+#0 C:\xampp\htdocs\ManagerPlus360\api.php(136): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\ManagerPlus360\api.php(150): getOrCreateLookup('manufacturers', 'ASUS')
+#2 C:\xampp\htdocs\ManagerPlus360\api.php(79): saveEquipment(Array)
+#3 {main}
+

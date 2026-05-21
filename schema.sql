@@ -1,0 +1,56 @@
+
+USE managerplus360;
+
+CREATE TABLE IF NOT EXISTS equipment (
+  id VARCHAR(100) PRIMARY KEY,
+  code VARCHAR(50) NOT NULL,
+  qr_code VARCHAR(255) NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  serial_number VARCHAR(100),
+  manufacturer_id VARCHAR(100),
+  model VARCHAR(100),
+  equipment_type_id VARCHAR(100),
+  location_id VARCHAR(100),
+  criticality VARCHAR(50),
+  acquisition_date DATE,
+  warranty_end_date DATE,
+  status VARCHAR(50),
+  notes TEXT,
+  created_at DATETIME,
+  created_by VARCHAR(100),
+  updated_at DATETIME,
+  updated_by VARCHAR(100),
+  deleted_at DATETIME NULL,
+  deleted_by VARCHAR(100),
+  hasPlan TINYINT(1) DEFAULT 0,
+  operatingHours INT DEFAULT 0,
+  failures INT DEFAULT 0,
+  repairHours INT DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS work_orders (
+  id VARCHAR(100) PRIMARY KEY,
+  work_order_number VARCHAR(50) NOT NULL,
+  equipment_id VARCHAR(100) NOT NULL,
+  maintenance_type VARCHAR(50),
+  priority VARCHAR(50),
+  status VARCHAR(50),
+  assigned_user_id VARCHAR(100),
+  vendor_id VARCHAR(100),
+  quote_val VARCHAR(255),
+  planned_start_date DATETIME,
+  actual_start_date DATETIME,
+  actual_end_date DATETIME,
+  estimated_cost DECIMAL(18,2) DEFAULT 0,
+  actual_cost DECIMAL(18,2) DEFAULT 0,
+  resolution_notes TEXT,
+  hours DECIMAL(10,2) DEFAULT 0,
+  evidence TEXT,
+  created_at DATETIME,
+  created_by VARCHAR(100),
+  updated_at DATETIME,
+  updated_by VARCHAR(100),
+  deleted_at DATETIME NULL,
+  deleted_by VARCHAR(100)
+);

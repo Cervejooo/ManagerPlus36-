@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ManagerPlus360</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegação principal">
+        <div class="brand">
+          <div class="brand-mark">M</div>
+          <div>
+            <strong>ManagerPlus360</strong>
+            <span>Gestão de Manutenção</span>
+          </div>
+        </div>
+        <nav class="nav-list">
+          <button class="nav-item active" data-view="dashboard"><span class="icon">▦</span>Painel</button>
+          <button class="nav-item" data-view="equipment"><span class="icon">▣</span>Equipamentos</button>
+          <button class="nav-item" data-view="workorders"><span class="icon">☑</span>Ordens de Trabalho</button>
+          <button class="nav-item" data-view="closure"><span class="icon">✓</span>Encerramento</button>
+          <button class="nav-item" data-view="qr"><span class="icon">⌗</span>Leitor QR</button>
+        </nav>
+        <div class="side-card">
+          <span>Estado operacional</span>
+          <strong>97.8%</strong>
+          <p>Disponibilidade média da frota nas últimas 4 semanas.</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">☰</button>
+          <div>
+            <p class="eyebrow">ManagerPlus360 · Gestão de Manutenção</p>
+            <h1 id="pageTitle">Dashboard e KPIs</h1>
+          </div>
+          <div class="top-actions">
+            <div class="search-shell">
+              <span>⌕</span>
+              <input id="globalSearch" type="search" placeholder="Pesquisar equipamento, OT, técnico..." />
+            </div>
+            <button class="primary-action" id="quickWorkOrder">+ Nova OT</button>
+          </div>
+        </header>
+
+        <section id="toast" class="toast" aria-live="polite"></section>
+        <section id="viewRoot" class="view-root"></section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="modalBackdrop" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-head">
+          <div>
+            <p class="eyebrow" id="modalEyebrow">ManagerPlus360</p>
+            <h2 id="modalTitle">Detalhe</h2>
+          </div>
+          <button class="ghost icon-button" id="closeModal" aria-label="Fechar">×</button>
+        </div>
+        <div id="modalBody"></div>
+      </section>
+    </div>
+
+    <script src="qrcode.js"></script>
+    <script src="jsQR.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
