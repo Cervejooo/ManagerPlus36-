@@ -3,6 +3,7 @@ const state = {
   equipmentSearch: "",
   workOrderSearch: "",
   equipmentStatus: "Todas",
+  equipmentStatus: "Todos",
   equipmentCriticality: "Todos",
   workOrderStatus: "Todos",
   workOrderPriority: "Todos",
